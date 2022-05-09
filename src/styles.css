@@ -1,0 +1,360 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 10px;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Antic+Slab&family=Indie+Flower&family=Oleo+Script+Swash+Caps&family=Shadows+Into+Light&family=Special+Elite&display=swap');
+
+/*
+LOGO FONTS:
+1) font-family: 'Shadows Into Light', cursive;
+2) font-family: 'Oleo Script Swash Caps', cursive;
+
+HEADER FONTS PLAIN:
+font-family: 'Antic Slab', serif;
+
+DETAIL FONTS PLAIN:
+font-family: 'Antic Slab', serif;
+
+DETAIL FONTS STYLED:
+font-family: 'Special Elite', cursive; --> typewriter-eqsue
+font-family: 'Indie Flower', cursive; --> handwriting-esque
+*/
+
+
+:root {
+    --color-main-text: #d62828; 
+    --color-sub-text: #003049;
+    --color-bkg-light: #eae2b7;
+    --color-bkg-med: #fcbf49;
+    --color-bkg-dark: #f77f00;
+}
+
+
+/* DOCUMENT STYLES */
+
+/*HEADER STYLES*/
+.header {
+    height: max(10vh,70px);
+    width: 100vw;
+    /*grid-row: 0 / 1;*/
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 1rem;
+    background-color: var(--color-bkg-light);
+}
+
+.header > p {
+    font-size: 2.5rem;
+    font-family: 'Antic Slab', serif;
+    margin: 0.3rem 0.3rem 0.3rem 0.3rem;
+    border-radius: .2rem;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    color: var(--color-sub-text);
+    transition-duration: 0.4s;
+}
+
+.header > p:hover {
+    background-color: var(--color-bkg-dark) ;
+    color: var(--color-bkg-light);
+    cursor: pointer;
+}
+
+
+/*ABOUT PAGE CONTENT*/
+div.about {
+    display: grid;
+    grid-template-rows: repeat(2, 400px);
+}
+
+
+.about-pg-top {
+    background-color: var(--color-bkg-dark);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.about-pg-top > h1 {
+    color: var(--color-main-text);
+    font-size: 2.5rem;
+    font-family: 'Antic Slab', serif;
+}
+
+.about-pg-top > p {
+    color: var(--color-bkg-light);
+}
+
+.about-pg-bottom {
+    background-color: var(--color-bkg-med);
+
+}
+
+.about-pg-bottom > form {
+    height: 100%;
+    color: var(--color-sub-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.about-pg-bottom > form > h1 {
+    color: var(--color-main-text);
+    font-size: 2.5rem;
+    font-family: 'Antic Slab', serif;
+}
+
+form > input {
+    height: 1.5rem;
+    font-family: 'Antic Slab', serif;
+    border: none;
+    border-radius: .3rem;
+    color: var(--color-sub-text)
+}
+
+form > label {
+    font-family: 'Special Elite', cursive;
+    font-size: 1rem;
+    color: var(--color-sub-text)
+}
+
+form > button {
+    height: 1.5rem;
+    font-family: 'Special Elite', cursive;
+    color: var(--color-sub-text);
+    background-color: var(--color-main-text);
+    border: none;
+    border-radius: .3rem;
+}
+
+input:valid:not(:focus) {
+    border: 2px solid #06d6a0;
+}
+input:invalid:not(:focus)  {
+    border: 2px solid #d62828;
+}
+
+/*MENU PAGE CONTENT*/
+div.menu {
+    height: 100rem;
+    width: 100vw;
+    background: url("images/boats-view-cropped-small.jpg");
+    background-size: cover;
+    background-repeat: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+div.menu > div:nth-child(n+1) {
+    display: grid;
+    justify-content: center;
+    background-color: var(--color-bkg-light); 
+    margin: 1rem 2rem 1rem 2rem;
+    padding: 1rem 2rem 1rem 2rem;
+    width: max(30vw, 250px);
+    border-radius: .5rem;
+}
+
+div.menu h1 {
+    justify-self: center;
+    font-family: 'Antic Slab', serif;
+    color: var(--color-main-text);
+    font-size: 2rem;   
+}
+
+div.menu > div:nth-child(n+2) {
+    display: grid;
+    grid-template-rows: .5fr 1fr 1fr;
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 1rem;
+    column-gap: 1rem;
+    background-color: var(--color-bkg-light);
+    margin: 2rem 2rem 2rem 2rem;
+    padding: 2rem 2rem 2rem 2rem;
+    width: max(30vw, 250px);
+}
+
+div.menu > div > h2 {
+    grid-area: 1 / 1 / 2 / 3;
+    justify-self: center;
+    font-family: 'Antic Slab', serif;
+    font-size: 2rem;
+    color: var(--color-sub-text);
+}
+
+div.menu > div > div {
+    justify-self: center;
+}
+
+
+/*LANDING PAGE CONTENT*/
+div.landing {
+    height: 90vh;
+    width: 100vw;
+    background: url("images/tacos-small.jpg");
+    background-size: cover;
+    background-repeat: none;
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+}
+
+.logo-div {
+    grid-row: 2 / 3;
+
+    background-color: var(--color-bkg-light);
+    /*background-color: rgba(100, 100, 100, 0.50);*/
+    justify-self: stretch;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-div > h1 {
+    font-size: 5rem;
+    /*font-family: 'Oleo Script Swash Caps', cursive;*/
+    font-family: 'Shadows Into Light', cursive;
+    color: var(--color-main-text);
+    margin: 1rem 2rem 1rem 2rem;
+}
+
+.logo-div > button {
+    border: none;
+    border-radius: 0.2rem;
+    background-color: var(--color-bkg-med) ;
+    color: var(--color-sub-text);
+
+    margin: 1rem 2rem 1rem 2rem;
+    height: 2.5rem;
+    line-height: 1.25rem;
+    transition-duration: 0.4s;
+}
+
+.logo-div > button:hover {
+    background-color: var(--color-bkg-dark) ;
+    color: var(--color-bkg-light);
+    cursor: pointer;
+}
+
+
+/*FOOTER SECTION */
+.footer {
+    height: max(20vh,200px);
+    width: 100vw;
+
+    /*grid-row: 11 / 13;*/
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--color-bkg-light);
+}
+
+.footer > div {
+    margin: 1rem 3rem 1rem 3rem;
+
+}
+
+.foot-left > ul > li:nth-child(1) {
+    padding: 0.3rem 0 0.3rem 0;
+    color: var(--color-sub-text);
+    font-size: 1.5rem;
+    font-family: 'Antic Slab', serif;
+}
+
+.foot-left > ul > li:nth-child(n+2) {
+    padding: 0.3rem 0 0.3rem 0;
+    color: var(--color-bkg-dark);
+    font-size: 1rem;    
+    font-family: 'Special Elite', cursive;
+}
+
+
+.foot-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.foot-right > p:nth-child(1) {
+    padding: 0.3rem 0 0.3rem 0;
+    color: var(--color-sub-text);
+    font-size: 1.5rem;
+    font-family: 'Antic Slab', serif;
+}
+
+.foot-right > p:nth-child(n+2) {
+    font-size: 1rem;
+    padding: 0.3rem 0 0.3rem 0;
+    color: var(--color-bkg-dark);
+    font-family: 'Special Elite', cursive;
+}
+
+/*MAIN FONT STYLES*/
+/*.text-lg {
+}*/
+
+.text-med {
+    font-size: 1.5rem;
+    font-family: 'Special Elite', cursive;
+    color: var(--color-sub-text);
+}
+
+.text-sm {
+    font-size: 1rem;
+    font-family: 'Special Elite', cursive;
+    color: var(--color-bkg-dark);
+}
+
+
+
